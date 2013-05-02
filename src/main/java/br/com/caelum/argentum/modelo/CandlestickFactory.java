@@ -13,17 +13,31 @@ public class CandlestickFactory {
 		// double maximo = negociacoes.get(0).getPreco();
 		double volume = 0;
 
-		double minimo = Double.MIN_VALUE;
-		double maximo = Double.MAX_VALUE;
+		// O codigo abaixo foi comentado pelo teste 3 do exercicio 3.10
+		// double minimo = Double.MAX_VALUE;
+		// double maximo = Double.MIN_VALUE;
+
+		double minimo = negociacoes.isEmpty() ? 0 : Double.MAX_VALUE;
+		double maximo = negociacoes.isEmpty() ? 0 : Double.MIN_VALUE;
 
 		for (Negociacao negociacao : negociacoes) {
 
 			volume += negociacao.getVolume();
 
+			// O codigo abaixo foi comentado pelo teste 4 do exercicio 3.8 -
+			// JUnit - corrigir para uma negociacao apenas
+			// if (negociacao.getPreco() < minimo) {
+			// minimo = negociacao.getPreco();
+			// } else if (negociacao.getPreco() > maximo) {
+			// maximo = negociacao.getPreco();
+			// }
+
+			if (negociacao.getPreco() < minimo) {
+				minimo = negociacao.getPreco();
+			}
+
 			if (negociacao.getPreco() > maximo) {
 				maximo = negociacao.getPreco();
-			} else if (negociacao.getPreco() < minimo) {
-				minimo = negociacao.getPreco();
 			}
 
 		}

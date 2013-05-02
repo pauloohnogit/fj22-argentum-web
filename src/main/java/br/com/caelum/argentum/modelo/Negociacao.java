@@ -9,6 +9,12 @@ public final class Negociacao {
 	private final Calendar data;
 
 	public Negociacao(double preco, int quantidade, Calendar data) {
+
+		// Codigo para o exercicio 3.10 - 2
+		if (data == null) {
+			throw new IllegalArgumentException("Data não pode ser nula!");
+		}
+
 		this.preco = preco;
 		this.quantidade = quantidade;
 		this.data = data;
@@ -23,7 +29,14 @@ public final class Negociacao {
 	}
 
 	public Calendar getData() {
-		return data;
+		// Codigo comentado pelo exercicio 3.10 - 1
+		// return data;
+		return (Calendar) this.data.clone();
+
+		// Calendar copia = Calendar.getInstance();
+		// copia.setTimeInMillis(this.data.getTimeInMillis());
+		// return copia;
+
 	}
 
 	public double getVolume() {

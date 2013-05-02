@@ -14,6 +14,37 @@ public final class Candlestick {
 
 	public Candlestick(double abertura, double fechamento, double minimo,
 			double maximo, double volume, Calendar data) {
+
+		// Codigo para o exercicio 3.10 - 4
+		if (minimo > maximo) {
+			throw new IllegalArgumentException(
+					"Preço Minimo não pode exceder o preço máximo!");
+		}
+
+		// Codigo para o exercicio 3.10 - 5
+		if (data == null) {
+			throw new IllegalArgumentException("Data não pode ser nula!");
+
+		}
+
+		// Codigo para o exercicio 3.10 - 5
+		if (abertura < 0) {
+			throw new IllegalArgumentException(
+					"Preço de abertura não pode ser negativo!");
+		}
+
+		// Codigo para o exercicio 3.10 - 5
+		if (fechamento < 0) {
+			throw new IllegalArgumentException(
+					"Preço de fechamento não pode ser negativo!");
+		}
+
+		// Codigo para o exercicio 3.10 - 5
+		if (minimo < 0) {
+			throw new IllegalArgumentException(
+					"Preço mínimo não pode ser negativo!");
+		}
+
 		this.abertura = abertura;
 		this.fechamento = fechamento;
 		this.minimo = minimo;
