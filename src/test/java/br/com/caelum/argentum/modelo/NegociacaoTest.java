@@ -19,8 +19,9 @@ public class NegociacaoTest {
 
 		negociacao.getData().set(Calendar.DAY_OF_MONTH, 20);
 
-		Assert.assertEquals(5, negociacao.getData().get(Calendar.DAY_OF_MONTH));
-
+		// Assert.assertEquals(5,
+		// negociacao.getData().get(Calendar.DAY_OF_MONTH));
+		Assert.assertEquals(5, negociacao.getData().get(Calendar.DATE));
 	}
 
 	// Exercicio 3.10 - 2
